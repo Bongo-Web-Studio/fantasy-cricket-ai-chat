@@ -58,47 +58,8 @@ const defaultItems: FAQItem[] = [
     answer:
       "No hard limit on requests — but we manage throughput to ensure quality. For very large volume needs we offer custom enterprise plans.",
   },
-  {
-    question:
-      "We require a high volume of monthly 3D content deliverables, do you offer custom plans?",
-    answer:
-      "Yes — we can create a custom plan with guaranteed capacity, SLAs, and a dedicated team. Contact sales for a tailored quote.",
-  },
-  {
-    question: "How fast will I receive my models and renderings?",
-    answer:
-      "Typical turnaround times are listed on each plan. Simple requests can be 24–72 hours; complex work may take longer. Rush options are available.",
-  },
-  {
-    question: "Where are Rendify's 3D artists located?",
-    answer:
-      "Our artists are distributed globally — this gives us flexibility and 24/7 coverage for many time zones.",
-  },
-  {
-    question: "What programs do you model and render in?",
-    answer:
-      "We commonly use Blender, 3ds Max, Maya, Cinema4D and key renderers like Cycles, V-Ray, and Octane. Tell us your format preference.",
-  },
-  {
-    question: "How do I request 3D assets?",
-    answer:
-      "Requests are submitted via our dashboard. Provide references, dimensions, textures, and any notes. We accept images, CAD files, and sketches.",
-  },
-  {
-    question: "What if I don't like the models and renderings?",
-    answer:
-      "We include revision cycles in every plan — request changes and our artists will iterate until it matches your brief.",
-  },
-  {
-    question: "What if I only have a single request?",
-    answer:
-      "We support single requests and offer pay-as-you-go or trial options — check the pricing page for one-off offers.",
-  },
-  {
-    question: `Are there any refunds if I don't like the service?`,
-    answer:
-      "Refunds and guarantees vary by plan. Review our Terms or contact support and we'll work to resolve any issues.",
-  },
+  
+
 ];
 
 export default function FAQ({

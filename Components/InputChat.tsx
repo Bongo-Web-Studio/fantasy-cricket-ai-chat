@@ -50,7 +50,7 @@ export default function InputChat() {
                 </h1>
 
                 {/* Main Input Container */}
-                <div className="w-full max-w-[800px] bg-white  rounded-4xl  transition-all duration-200 ">
+                <div className="w-full max-w-[800px] bg-white  rounded-4xl  transition-all duration-200 border border-gray-300 ">
                   {/* Text Area */}
                   <textarea
                     value={text}

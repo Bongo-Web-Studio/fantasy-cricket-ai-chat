@@ -7,10 +7,12 @@ import InputChat from "@/Components/InputChat";
 import TrustedBrands from "@/Components/Marqueue";
 import Navbar from "@/Components/Navbar";
 
+
 export default function LandingPage() {
   return (
     <div className="w-full min-h-screen bg-white relative">
       <Navbar />
+ 
       <HeroSection />
       <TrustedBrands />
       <InputChat />
