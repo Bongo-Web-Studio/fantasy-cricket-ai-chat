@@ -132,7 +132,7 @@ export default function FAQ({
   return (
     <section className="min-h-screen bg-white py-10 px-4 sm:px-6 lg:px-8 font-sans">
       <div className="max-w-3xl mx-auto">
-        <header className="text-center mb-8 mt-6">
+        <header className="text-center mb-8 ">
           <h2
             style={{ fontFamily: "PPEditorialNew" }}
             className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-[#101828] tracking-tight mb-2"

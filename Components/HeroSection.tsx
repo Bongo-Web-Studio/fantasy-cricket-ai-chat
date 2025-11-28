@@ -56,7 +56,7 @@ export default function HeroSection() {
 
           {/* Subheadline */}
           <p className="mt-2 text-lg md:text-2xl text-gray-700 font-light max-w-2xl ml-3 pl-4">
-            Your Data-Driven Edge in Fantasy Cricket. <br /> Powered by
+            Your Data-Driven Edge In Fantasy Cricket. <br /> Powered by
             Intelligence.
           </p>
           <div className="p-1 border border-gray-100 rounded-full lg:mt-8 mt-5 lg:-ml-1  ml-2 ">

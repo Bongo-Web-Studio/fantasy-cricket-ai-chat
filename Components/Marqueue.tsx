@@ -14,7 +14,7 @@ export default function TrustedBrands() {
             style={{ fontFamily: 'PPEditorialNew' }}
             className="text-2xl md:text-4xl lg:text-5xl leading-tight text-[#091717] tracking-tight max-w-lg"
           >
-            Trusted by fast-moving
+            Trusted by Fast-Moving
             <span className="block md:inline"> Venture Capital Firms</span>
           </h2>
         </div>
