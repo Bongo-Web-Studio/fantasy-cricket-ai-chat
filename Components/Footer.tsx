@@ -49,7 +49,7 @@ export default function Footer({
   return (
     <footer className="relative w-full bg-white overflow-hidden font-sans">
       {/* MARQUEE */}
-      <div className="w-full h-[18vh] sm:h-[20vh] bg-[#DFEFF1] text-[#111812] py-3 overflow-hidden border border-[#2795A2]">
+      <div className="w-full h-[10vh] sm:h-[20vh] bg-[#DFEFF1] text-[#111812] py-3 overflow-hidden border border-[#2795A2]">
         <div
           ref={marqueeRef}
           aria-hidden
@@ -59,11 +59,11 @@ export default function Footer({
             <div key={i} className="flex items-center mx-3 mt-2">
               <span
                 style={{ fontFamily: "PPEditorialNew" }}
-                className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-medium tracking-tight text-[#2795A2]/40 mt-4"
+                className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-medium tracking-tight text-[#2795A2]/40 lg:mt-4"
               >
                 {text}
               </span>
-              <Sparkle className="w-10 h-10 sm:w-14 sm:h-14 lg:w-16 lg:h-16 ml-4 sm:ml-6 mt-3 text-[#2795A2]" aria-hidden />
+              <Sparkle className="w-10 h-10 sm:w-14 sm:h-14 lg:w-16 lg:h-16 ml-4 sm:ml-6 lg:mt-3 text-[#2795A2]" aria-hidden />
             </div>
           ))}
         </div>

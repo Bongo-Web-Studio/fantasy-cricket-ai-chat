@@ -78,10 +78,10 @@ const SearchComponent: React.FC<SearchComponentProps> = ({
   const isFilled = text.trim().length > 0 && !disabled;
 
   return (
-    <div className={cn("w-full px-3 sm:px-6", className)}>
+    <div className={cn("w-full  sm:px-6", className)}>
       <div
         className={cn(
-          "mx-auto max-w-[900px] rounded-4xl ",
+          "mx-auto lg:max-w-[900px] rounded-4xl ",
           inputBg,
           "shadow-sm"
         )}
