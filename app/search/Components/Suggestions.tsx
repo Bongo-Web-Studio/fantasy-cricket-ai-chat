@@ -52,7 +52,7 @@ export default function Suggestions({ onSelect }: Props) {
         
 
                <SinglePlayerResponsePerplexityStyle  
-            onClose={() => setSelected(null)} playerData={fakeData} />
+           playerData={fakeData} />
         </div>
       )}
     </div>

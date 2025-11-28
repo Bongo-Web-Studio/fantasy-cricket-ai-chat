@@ -107,23 +107,7 @@ export default function InputChat() {
                   </div>
                 </div>
 
-                {/* Footer Suggestions */}
-                <div className="mt-8 flex flex-wrap justify-center gap-3 w-full max-w-[800px]">
-                  <SuggestionChip icon={<Scale size={16} />} label="Compare" />
-                  <SuggestionChip icon={<Heart size={16} />} label="Health" />
-                  <SuggestionChip
-                    icon={<CheckCircle2 size={16} />}
-                    label="Fact Check"
-                  />
-                  <SuggestionChip
-                    icon={<GitGraph size={16} />}
-                    label="Analyze"
-                  />
-                  <SuggestionChip
-                    icon={<DollarSign size={16} />}
-                    label="Finance"
-                  />
-                </div>
+                          
               </div>
             </div>
           </div>

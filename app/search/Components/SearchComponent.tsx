@@ -5,7 +5,7 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { Globe, Cpu, Paperclip, Mic, ArrowRight, Music } from "lucide-react";
+import { Globe, Cpu, Paperclip, Mic, ArrowRight, Music, AudioLines } from "lucide-react";
 
 type SearchComponentProps = {
   onSubmit?: (value: string) => void;
@@ -148,39 +148,25 @@ const SearchComponent: React.FC<SearchComponentProps> = ({
                     <Paperclip size={18} />
                   </button>
                 </div>
+             <div className="flex items-center gap-2">
+                        <button className="p-2.5 bg-[#0F1916] text-white rounded-full hover:bg-[#0F1916]/80 hover:text-zinc-200 transition-colors border border-zinc-800">
+                          <Mic size={18} />
+                        </button>
 
-                <div className="flex items-center gap-2">
-                  <button
-                    type="button"
-                    className="p-2.5 bg-[#0F1916] text-white rounded-full hover:bg-[#0F1916]/90 transition-colors border border-zinc-800"
-                    aria-label="Start voice input"
-                    title="Voice input"
-                    disabled={disabled}
-                  >
-                    <Mic size={18} />
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={submit}
-                    disabled={!isFilled}
-                    aria-disabled={!isFilled}
-                    aria-label={isFilled ? "Send query" : "No text to send"}
-                    title={isFilled ? "Send" : "Type something to send"}
-                    className={cn(
-                      "p-2.5 rounded-full transition-all duration-200 border flex items-center justify-center",
-                      isFilled
-                        ? "bg-[#22b8cf] text-white border-transparent hover:bg-[#1faac0]"
-                        : "bg-[#111827] text-zinc-400 border-zinc-800 cursor-not-allowed"
-                    )}
-                  >
-                    {isFilled ? (
-                      <ArrowRight size={18} strokeWidth={2.5} />
-                    ) : (
-                      <Music size={18} strokeWidth={2.5} />
-                    )}
-                  </button>
-                </div>
+                        <button
+                          className={`p-2.5 rounded-full transition-all duration-200 ${
+                            text.trim().length > 0
+                              ? "bg-[#22b8cf] text-white hover:bg-[#1faac0]"
+                              : "bg-[#22b8cf] text-black hover:bg-[#1faac0]"
+                          }`}
+                        >
+                          {text.trim().length > 0 ? (
+                            <ArrowRight size={18} strokeWidth={2.5} />
+                          ) : (
+                            <AudioLines size={18} strokeWidth={2.5} />
+                          )}
+                        </button>
+                      </div>
               </div>
             </div>
           </div>
