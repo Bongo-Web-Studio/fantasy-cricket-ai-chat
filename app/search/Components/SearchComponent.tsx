@@ -103,7 +103,7 @@ const SearchComponent: React.FC<SearchComponentProps> = ({
               rows={1}
               className={cn(
                 "w-full bg-transparent text-lg md:text-xl placeholder:text-zinc-400 p-3 pr-4",
-                "min-h-[64px] max-h-[220px] resize-none focus:outline-none",
+                "min-h-16 max-h-[220px] resize-none focus:outline-none",
                 "text-[#101828]",
                 disabled ? "opacity-60 cursor-not-allowed" : ""
               )}

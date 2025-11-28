@@ -36,7 +36,7 @@ export default function TrustedBrands() {
               {[...logos, ...logos, ...logos].map((brand, index) => (
                 <div
                   key={index}
-                  className="min-w-[120px] md:min-w-[160px] lg:min-w-[200px] flex items-center justify-center shrink-0 px-2 md:px-4"
+                  className="min-w-[120px] md:min-w-40 lg:min-w-[200px] flex items-center justify-center shrink-0 px-2 md:px-4"
                   title={brand.name}
                   role="img"
                 >

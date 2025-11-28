@@ -123,7 +123,7 @@ const FounderSection: FC = () => {
           className="bg-[#2795A2]/15 p-6 md:p-10 flex flex-col md:flex-row gap-6 md:gap-8 rounded-t-4xl border-t border-l border-r border-[#2795A2]/60"
         >
           {/* Left: Image Section - updates with selection (responsive) */}
-          <div className="flex-shrink-0 w-full sm:w-40 md:w-48 lg:w-60 aspect-square rounded-4xl overflow-hidden shadow-md transition-all duration-300 ease-in-out">
+          <div className="shrink-0 w-full sm:w-40 md:w-48 lg:w-60 aspect-square rounded-4xl overflow-hidden shadow-md transition-all duration-300 ease-in-out">
             <img
               // show selected person's image, fallback to founder or placeholder
               src={(current.image as string) || FOUNDER_IMAGE_URL || PLACEHOLDER_TEAM_IMG}

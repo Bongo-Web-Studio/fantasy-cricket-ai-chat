@@ -12,7 +12,7 @@ const SearchIllustration: React.FC = () => (
     {/* Illustration card area */}
     <div className="relative w-full rounded-xl p-4 md:p-6 bg-white/60 backdrop-blur-sm border border-gray-100 shadow-sm flex flex-col md:flex-row gap-4 md:gap-6">
       {/* Left sidebar (small indicators) */}
-      <div className="flex-shrink-0 flex items-start md:items-center w-full md:w-1/4">
+      <div className="shrink-0 flex items-start md:items-center w-full md:w-1/4">
         <div className="flex items-center gap-2">
           <div className="w-2 h-2 rounded-full bg-blue-400"></div>
           <div className="hidden sm:block h-2 bg-gray-200 rounded w-20"></div>

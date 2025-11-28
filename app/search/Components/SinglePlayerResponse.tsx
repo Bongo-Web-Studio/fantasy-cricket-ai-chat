@@ -158,7 +158,7 @@ export default function SinglePlayerResponseClean({
           <div className="flex flex-col gap-4">
             <div className="relative w-full overflow-hidden rounded-xl bg-slate-50">
               {/* Responsive aspect: square on small, wider on md+ */}
-              <div className="w-full aspect-square sm:aspect-[4/3] md:aspect-[3/2] lg:aspect-square">
+              <div className="w-full aspect-square sm:aspect-4/3 md:aspect-3/2 lg:aspect-square">
                 <img
                   className="w-full h-full rounded-xl object-cover"
                   src="https://documents.bcci.tv/resizedimageskirti/164_compress.png"

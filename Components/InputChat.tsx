@@ -83,7 +83,7 @@ export default function InputChat() {
                       onChange={handleInput}
                       onKeyDown={handleKeyDown}
                       placeholder="Ask anything. Type @ for mentions."
-                      className="w-full bg-transparent text-base sm:text-lg md:text-lg text-[#091717] placeholder:text-zinc-500 p-4 sm:p-6 min-h-[60px] sm:min-h-[80px] max-h-[200px] sm:max-h-[300px] resize-none focus:outline-none"
+                      className="w-full bg-transparent text-base sm:text-lg md:text-lg text-[#091717] placeholder:text-zinc-500 p-4 sm:p-6 min-h-[60px] sm:min-h-20 max-h-[200px] sm:max-h-[300px] resize-none focus:outline-none"
                       rows={1}
                       style={{ height: "auto", minHeight: 60 } as CSSProperties}
                     />

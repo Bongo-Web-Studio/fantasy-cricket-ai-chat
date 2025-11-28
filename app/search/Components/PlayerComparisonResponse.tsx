@@ -100,7 +100,7 @@ export default function PlayerComparisonResponse() {
         {/* Small winner summary on the right for wider screens; becomes top stacked on mobile */}
         <div className="w-full sm:w-auto">
           <div className="flex items-center gap-3 bg-white rounded-2xl px-3 py-2 shadow-sm">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden bg-gray-100 flex-shrink-0">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden bg-gray-100 shrink-0">
               <img
                 src={winner?.avatar}
                 alt={winner?.name || "No winner"}
@@ -129,7 +129,7 @@ export default function PlayerComparisonResponse() {
             role="group"
             aria-label={`${p.name} summary`}
           >
-            <div className="flex-shrink-0">
+            <div className="shrink-0">
               <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center">
                 <img
                   src={p.avatar}

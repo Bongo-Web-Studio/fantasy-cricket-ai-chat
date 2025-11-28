@@ -172,7 +172,7 @@ export default function FAQ({
                     </h3>
                   </div>
 
-                  <div className="flex-shrink-0 ml-2 mt-1 sm:mt-0">
+                  <div className="shrink-0 ml-2 mt-1 sm:mt-0">
                     <Plus
                       className={`w-5 h-5 transition-transform duration-200 transform ${
                         isActive ? "rotate-45" : "rotate-0"
