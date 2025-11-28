@@ -6,14 +6,16 @@ import HeroSection from "@/Components/HeroSection";
 import InputChat from "@/Components/InputChat";
 import TrustedBrands from "@/Components/Marqueue";
 import Navbar from "@/Components/Navbar";
-
+import SinglePlayerResponsePerplexityStyle from "./search/Components/SinglePlayerResponse";
+import PlayerComparisonResponse from "./search/Components/PlayerComparisonResponse";
 
 export default function LandingPage() {
   return (
     <div className="w-full min-h-screen bg-white relative">
       <Navbar />
- 
+
       <HeroSection />
+
       <TrustedBrands />
       <InputChat />
       <Future />
