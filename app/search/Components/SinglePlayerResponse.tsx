@@ -128,16 +128,7 @@ export default function SinglePlayerResponseClean({
     <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 text-slate-900">
       {/* Header */}
       <header className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
-        <div className="min-w-0">
-          <h1 className="text-2xl sm:text-3xl font-semibold truncate">{player.name}</h1>
-          <p className="text-sm text-slate-600 truncate">{player.role} • {player.team}</p>
-
-          {shouldRender(summary) && (
-            <p className="mt-2 text-sm text-slate-700 max-w-xl">
-              Quick view: {summary} — recommended when in good form and favourable match-ups.
-            </p>
-          )}
-        </div>
+       
 
         <div className="rounded-md bg-white p-1 flex gap-1">
           {(["Overview","Stats","Form"] as const).map(s=> (
@@ -154,7 +145,7 @@ export default function SinglePlayerResponseClean({
       <main className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
         {/* Player Card */}
-        <Card className="p-4 bg-white text-slate-900 border border-slate-200">
+        <Card className="p-4  text-slate-900 border border-slate-200">
           <div className="flex flex-col gap-4">
             <div className="relative w-full overflow-hidden rounded-xl bg-slate-50">
               {/* Responsive aspect: square on small, wider on md+ */}

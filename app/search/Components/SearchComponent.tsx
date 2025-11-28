@@ -78,7 +78,7 @@ const SearchComponent: React.FC<SearchComponentProps> = ({
   const isFilled = text.trim().length > 0 && !disabled;
 
   return (
-    <div className={cn("w-full  sm:px-6", className)}>
+    <div className={cn(" w-[900px]  sm:px-6", className)}>
       <div
         className={cn(
           "mx-auto lg:max-w-[900px] rounded-4xl ",

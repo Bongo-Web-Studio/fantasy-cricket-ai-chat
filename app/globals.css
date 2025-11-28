@@ -4,7 +4,6 @@
 @font-face {
   font-family: "FKGroteskMono";
   src: url("/Fonts/FKGroteskSemiMonoTrial-Regular.otf") format("opentype");
-
 }
 
 /* === Font: PP Editorial New UltraLight === */
@@ -12,13 +11,14 @@
   font-family: "PPEditorialNew";
   src: url("/Fonts/PPEditorialNew-Ultralight-BF644b21500d0c0.otf")
     format("opentype");
- 
 }
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.no-scrollbar {
-  -ms-overflow-style: none; /* IE/Edge */
-  scrollbar-width: none;    /* Firefox */
+/* globals.css */
+@layer utilities {
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
 }

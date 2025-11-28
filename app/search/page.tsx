@@ -171,16 +171,16 @@ export default function App(): React.ReactElement {
       style={bgStyle}
       className={`${BG_DARK} ${TEXT_DEFAULT} min-h-screen w-full font-sans h-screen`}
     >
-      <div className="relative h-full">
+      <div className="relative h-full ">
         {/* Desktop sidebar: fixed on the left and visible on md+ */}
-        <aside className="hidden md:flex md:flex-col md:w-72 lg:w-80 md:fixed md:inset-y-0 md:overflow-y-auto">
+        <aside className="hidden md:flex md:flex-col  md:fixed md:inset-y-0 md:overflow-y-auto  bg-amber-300">
           <div className="h-full px-2 py-6">
             <Sidebar />
           </div>
         </aside>
 
         {/* Mobile top nav with hamburger */}
-        <div className="md:hidden fixed top-0 left-0 right-0 z-30 px-4 py-3 backdrop-blur-sm">
+        <div className="md:hidden fixed top-0 left-0 right-0 z-30 px-4 py-3 backdrop-blur-sm ">
           <div className="flex items-center justify-between">
             <button
               aria-label="Open menu"
@@ -214,7 +214,7 @@ export default function App(): React.ReactElement {
 
         {/* Mobile sidebar drawer */}
         {mobileSidebarOpen && (
-          <div className="md:hidden fixed inset-0 z-40 flex">
+          <div className="md:hidden fixed inset-0 z-40 flex ">
             <div
               className="absolute inset-0 bg-black/50"
               onClick={() => setMobileSidebarOpen(false)}
@@ -232,23 +232,19 @@ export default function App(): React.ReactElement {
         )}
 
         {/* Main chat panel. On desktop we add left margin to accommodate the fixed sidebar. */}
-        <main className="flex-1  lg:ml-30 h-full flex flex-col">
+        <main className="flex-1  h-full flex flex-col ">
           {/* top spacer to avoid overlap with mobile top nav */}
           <div className="h-14 md:h-0" />
 
           <div className="flex-1 flex items-stretch justify-center overflow-hidden">
             <div className="w-full max-w-5xl flex flex-col h-full">
               {/* Chat header (sticky) */}
-              <div className="sticky top-0 z-10 bg-transparent px-4 py-4 md:py-6 border-b border-white/6 flex items-center justify-between">
-                <div>
-                  <h1 className="font-serif text-xl md:text-2xl">Skipper AI</h1>
-                </div>
-              </div>
+             
 
               {/* Messages / suggestions area */}
               <div
                 ref={messagesRef}
-                className="flex-1 overflow-auto px-4 py-6 space-y-6"
+                className="flex-1 overflow-auto  px-4 py-6 space-y-6 no-scrollbar"
               >
                 {/* If comparisonQuery exists, render ONLY the comparison component */}
                 {comparisonQuery ? (
@@ -308,8 +304,8 @@ export default function App(): React.ReactElement {
               </div>
 
               {/* Fixed input / search area: sticky to bottom of the chat panel */}
-              <div className="sticky bottom-0 z-20   px-4 py-4">
-                <div className="w-full max-w-3xl mx-auto">
+              <div className="absolute   bottom-5  left-[20%]  ">
+                <div className="w-full max-w-3xl mx-auto  ">
                   {/* Pass handleSend to SearchComponent so whatever user types appears on screen */}
                   <SearchComponent onSubmit={handleSend} />
                 </div>
