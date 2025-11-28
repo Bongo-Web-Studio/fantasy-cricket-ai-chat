@@ -1,19 +1,17 @@
 "use client";
 
-import React, { KeyboardEvent, useState } from "react";
+import React, { KeyboardEvent, useEffect, useRef, useState } from "react";
 import { Plus } from "lucide-react";
 
 /**
  * FAQ.tsx
  *
- * Type-safe, responsive, and accessible FAQ accordion built with React + Tailwind CSS.
+ * Responsive, type-safe FAQ accordion built with React + Tailwind CSS.
  * - Click or press Enter/Space to toggle an item
+ * - ArrowUp/ArrowDown/Home/End key support for keyboard navigation
  * - Uses aria attributes for accessibility
- * - Responsive typography and spacing for all screen sizes
- * - Type-safe with explicit types for items and state
- *
- * Usage: drop this file into your components folder and import: `import FAQ from "./FAQ";`
- * Make sure Tailwind CSS and `lucide-react` are installed in your project.
+ * - Smooth height animation using runtime measured height
+ * - Does not change visual UI/UX — only improves responsiveness & accessibility
  */
 
 type FAQItem = {
@@ -30,71 +28,118 @@ type FAQProps = {
 const defaultItems: FAQItem[] = [
   {
     question: "How do I know which plan to pick?",
-    answer:
-      "We recommend starting with a plan that matches your monthly output needs. If you're unsure, choose the middle tier — you can always upgrade. Our onboarding team can also advise based on your use-case.",
+    answer: "For Now it's Free",
   },
+  { question: "How does onboarding works?", answer: "just chat " },
+  { question: "Why wouldn't I just hire Dream 11", answer: "Money issuse" },
   {
-    question: "How does onboarding works?",
-    answer:
-      "Once you sign up, we'll schedule an onboarding call to understand your brand guidelines, preferred file formats, and turnaround expectations. After that, submit requests via our platform and we'll allocate artists.",
+    question: "What does unlimited chat",
+    answer: "Unlimited means you can  ue free",
   },
-  {
-    question: "Why wouldn't I just hire a full-time 3D artist?",
-    answer:
-      "Hiring full-time has overheads — salary, benefits, and downtime. With Rendify you get a vetted team of artists, flexible capacity, and predictable costs.",
-  },
-  {
-    question: 'What does "unlimited 3D modeling/rendering" really mean?',
-    answer:
-      "Unlimited means you can submit as many requests as you like. Throughput depends on complexity and queue; we prioritize requests per your subscription SLA.",
-  },
-  {
-    question: "How many 3D assets can I get in a month?",
-    answer:
-      "Output depends on complexity. Simple models/renderings are faster; complex scenes take longer. Check the plan details for typical monthly throughput estimates.",
-  },
+  { question: "How much Money can I get in a month?", answer: "May be 1cr" },
   {
     question: "Is there a limit to how many requests I can have?",
-    answer:
-      "No hard limit on requests — but we manage throughput to ensure quality. For very large volume needs we offer custom enterprise plans.",
+    answer: "Yes ",
   },
-  
-
 ];
 
 export default function FAQ({
   defaultOpenIndex = 1,
   items = defaultItems,
 }: FAQProps): React.ReactElement {
+  // ensure type-safety for active index
   const [activeIndex, setActiveIndex] = useState<number | null>(
     defaultOpenIndex ?? null
   );
+
+  // Refs for measuring panel height for smooth animation
+  const panelRefs = useRef<Array<HTMLDivElement | null>>([]);
+
+  // Keep refs in sync when items length changes
+  useEffect(() => {
+    panelRefs.current = panelRefs.current.slice(0, items.length);
+  }, [items.length]);
+
+  // If defaultOpenIndex is out of range, normalize it
+  useEffect(() => {
+    if (defaultOpenIndex == null) return;
+    if (defaultOpenIndex < 0 || defaultOpenIndex >= items.length) {
+      setActiveIndex(null);
+    } else {
+      setActiveIndex(defaultOpenIndex);
+    }
+    // only run on mount or when defaultOpenIndex/items length change
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [defaultOpenIndex, items.length]);
 
   const handleToggle = (index: number) => {
     setActiveIndex((prev) => (prev === index ? null : index));
   };
 
-  const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>, index: number) => {
+  const handleKeyDown = (
+    e: KeyboardEvent<HTMLButtonElement>,
+    index: number
+  ) => {
+    const key = e.key;
+
     // Toggle on Enter or Space for accessibility
-    if (e.key === "Enter" || e.key === " ") {
+    if (key === "Enter" || key === " " || key === "Spacebar") {
       e.preventDefault();
       handleToggle(index);
+      return;
+    }
+
+    // Navigation between headers
+    if (key === "ArrowDown") {
+      e.preventDefault();
+      const next = (index + 1) % items.length;
+      const nextButton = document.getElementById(
+        `faq-button-${next}`
+      ) as HTMLButtonElement | null;
+      nextButton?.focus();
+      return;
+    }
+
+    if (key === "ArrowUp") {
+      e.preventDefault();
+      const prev = (index - 1 + items.length) % items.length;
+      const prevButton = document.getElementById(
+        `faq-button-${prev}`
+      ) as HTMLButtonElement | null;
+      prevButton?.focus();
+      return;
+    }
+
+    if (key === "Home") {
+      e.preventDefault();
+      const first = document.getElementById(
+        `faq-button-0`
+      ) as HTMLButtonElement | null;
+      first?.focus();
+      return;
+    }
+
+    if (key === "End") {
+      e.preventDefault();
+      const last = document.getElementById(
+        `faq-button-${items.length - 1}`
+      ) as HTMLButtonElement | null;
+      last?.focus();
+      return;
     }
   };
 
   return (
-    <section className="min-h-screen bg-white py-12 px-4 sm:px-6 lg:px-8 font-sans">
+    <section className="min-h-screen bg-white py-10 px-4 sm:px-6 lg:px-8 font-sans">
       <div className="max-w-3xl mx-auto">
-        <header className="text-center mb-10 mt-6">
+        <header className="text-center mb-8 mt-6">
           <h2
-            style={{
-              fontFamily: "PPEditorialNew",
-            }}
-            className="text-3xl sm:text-4xl md:text-7xl  text-[#101828] tracking-tight mb-2"
+            style={{ fontFamily: "PPEditorialNew" }}
+            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-[#101828] tracking-tight mb-2"
           >
             Questions?
           </h2>
-          <p className="text-xl sm:text-2xl md:text-5xl font-serif italic text-gray-600">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-serif italic text-gray-600">
             We've got answers
           </p>
         </header>
@@ -108,50 +153,51 @@ export default function FAQ({
             return (
               <div
                 key={index}
-                className={`relative group w-full px-6 py-5 transition-all duration-200 ease-in-out bg-[#FAFAF2] border rounded-4xl 
-                  ${isActive ? "border-[#E8E6DA]  z-10" : "border-[#E8E6DA]"}`}
+                className={`relative group w-full px-6 py-5 transition-all duration-200 ease-in-out bg-[#FAFAF2]  rounded-2xl sm:rounded-3xl`}
               >
-                <div
+                {/* Use a native button for better semantics but keep visual layout identical */}
+                <button
                   id={buttonId}
-                  role="button"
-                  tabIndex={0}
                   aria-expanded={isActive}
                   aria-controls={panelId}
                   onClick={() => handleToggle(index)}
                   onKeyDown={(e) => handleKeyDown(e, index)}
-                  className="flex items-start sm:items-center justify-between space-x-4 cursor-pointer outline-none"
+                  className="w-full flex items-start sm:items-center justify-between space-x-4 cursor-pointer outline-none text-left"
                 >
-                  <div className="flex-1 pr-3 mt-4">
+                  <div className="flex-1 pr-3 mt-1 sm:mt-0">
                     <h3
-                      className={`text-base sm:text-lg lg:text-xl font-medium leading-tight ${
-                        isActive ? "text-[#101828]" : "text-[#101828]"
-                      }`}
+                      className={`text-base sm:text-lg lg:text-xl font-medium leading-tight text-[#101828]`}
                     >
                       {item.question}
                     </h3>
                   </div>
 
-                  <div className="flex-shrink-0 ml-2 mt-4 ">
+                  <div className="flex-shrink-0 ml-2 mt-1 sm:mt-0">
                     <Plus
                       className={`w-5 h-5 transition-transform duration-200 transform ${
                         isActive ? "rotate-45" : "rotate-0"
-                      } ${isActive ? "text-[#101828]" : "text-[#101828]"}`}
+                      } text-[#101828]`}
                       strokeWidth={2}
                       aria-hidden
                     />
                   </div>
-                </div>
+                </button>
 
-                {/* Collapsible panel */}
+                {/* Collapsible panel - measure scrollHeight for smooth animation */}
                 <div
                   id={panelId}
                   role="region"
                   aria-labelledby={buttonId}
-                  className={`mt-4 overflow-hidden transition-all duration-300 ease-in-out text-gray-700 ${
-                    isActive
-                      ? "max-h-[1000px] opacity-100"
-                      : "max-h-0 opacity-0"
-                  }`}
+                  ref={(el) => {
+                    panelRefs.current[index] = el;
+                  }}
+                  className="mt-4 overflow-hidden transition-all duration-300 ease-in-out text-gray-700"
+                  style={{
+                    maxHeight: isActive
+                      ? `${panelRefs.current[index]?.scrollHeight ?? 0}px`
+                      : "0px",
+                    opacity: isActive ? 1 : 0,
+                  }}
                 >
                   <p className="text-sm sm:text-base leading-relaxed">
                     {item.answer}

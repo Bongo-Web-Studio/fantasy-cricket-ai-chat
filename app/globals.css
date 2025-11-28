@@ -4,9 +4,7 @@
 @font-face {
   font-family: "FKGroteskMono";
   src: url("/Fonts/FKGroteskSemiMonoTrial-Regular.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+
 }
 
 /* === Font: PP Editorial New UltraLight === */
@@ -14,7 +12,5 @@
   font-family: "PPEditorialNew";
   src: url("/Fonts/PPEditorialNew-Ultralight-BF644b21500d0c0.otf")
     format("opentype");
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
+ 
 }

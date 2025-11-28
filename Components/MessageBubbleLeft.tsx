@@ -9,14 +9,14 @@ export default function MessageBubbleLeft() {
 
   return (
     <div className="flex w-full flex-col items-start">
-      <div className="relative max-w-[80%]">
+      <div className="relative max-w-[60%] lg:max-w-[80%]">
         <div
           className={`
             ${bubbleColorClass}
             px-3 py-2
             rounded-[18px] rounded-bl-none
-            text-xl leading-snug text-gray-800
-              border-t-2 border-l-2 border-b-2  border-gray-300
+            text-sm lg:text-xl leading-snug text-gray-800
+              border-t-2 border-l-2 border-b-2  border-gray-300 
           `}
         >
           Account No. XXXXXX7063 Credit with amount Rs. <span className="text-[#1487FF] underline"> 20000.00</span>
