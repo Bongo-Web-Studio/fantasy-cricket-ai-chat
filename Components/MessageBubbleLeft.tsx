@@ -15,7 +15,7 @@ export default function MessageBubbleLeft() {
             ${bubbleColorClass}
             px-3 py-2
             rounded-[18px] rounded-bl-none
-            text-sm lg:text-xl leading-snug text-gray-800
+            text-[12px] lg:text-xl leading-snug text-gray-800
               border-t-2 border-l-2 border-b-2  border-gray-300 
           `}
         >

@@ -115,7 +115,7 @@ export default function HeroSection() {
             />
           </div>
 
-             <div className="absolute top-[5%] -right-[26%]  lg:top-[5%]  lg:-right-[13%] z-60  max-w-[9cm]  p-2 ">
+             <div className="absolute top-[5%] -right-[40%]  lg:top-[5%]  lg:-right-[13%] z-60  max-w-[9cm]  p-2 ">
           <h1 className="text-left ">
             <MessageBubbleLeft />
           </h1>
