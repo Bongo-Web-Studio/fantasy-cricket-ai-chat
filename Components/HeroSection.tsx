@@ -40,8 +40,6 @@ export default function HeroSection() {
               <span className="ml-1  text-gray-700 font-light ">
                 Trusted By Thousands
               </span>
-              
-              
             </div>
           </div>
 
@@ -52,7 +50,7 @@ export default function HeroSection() {
             }}
             className="text-5xl  lg:text-7xl  font-light lg:max-w-3xl w-full p-4"
           >
-            Ask the AI, Build the <br className="" />
+            Ask the AI, Build the
             <span className="font-semibold text-[#2795A2]"> Winning Team</span>
           </h1>
 
@@ -115,14 +113,12 @@ export default function HeroSection() {
             />
           </div>
 
-             <div className="absolute top-[5%] -right-[40%]  lg:top-[5%]  lg:-right-[13%] z-60  max-w-[9cm]  p-2 ">
-          <h1 className="text-left ">
-            <MessageBubbleLeft />
-          </h1>
+          <div className="absolute top-[5%] -right-[40%]  lg:top-[5%]  lg:-right-[13%] z-60  max-w-[9cm]  p-2 ">
+            <h1 className="text-left ">
+              <MessageBubbleLeft />
+            </h1>
+          </div>
         </div>
-        </div>
-
-     
       </div>
     </section>
   );

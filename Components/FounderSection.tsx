@@ -35,7 +35,7 @@ const teamData: Record<TeamKey, TeamMember> = {
     role: "CEO",
     name: "Piyush 100x",
     title: "Co-Founder and CEO, Skipper AI",
-    image: "/team/ceo.jpg",
+    image: "https://pbs.twimg.com/profile_images/1974330540976451586/bMLt-yxK_400x400.jpg",
     description:
       "Rendify is, hands-down, one of the best services we’ve signed up for in years. Their team makes collaboration effortless — asking clear, focused questions, taking feedback in stride, and delivering results that genuinely wow.",
   },
@@ -43,7 +43,7 @@ const teamData: Record<TeamKey, TeamMember> = {
     role: "COO",
     name: "Anita Shah",
     title: "Chief Operating Officer",
-    image: "/team/coo.jpg",
+    image: "https://pbs.twimg.com/profile_images/1982479637327286272/UTXMsw0L_400x400.jpg",
     description:
       "Anita manages day-to-day operations, streamlines processes, and ensures the team ships high-quality work on time. She's known for clear communication and pragmatic decision-making.",
   },
@@ -51,7 +51,7 @@ const teamData: Record<TeamKey, TeamMember> = {
     role: "COM",
     name: "R. Campos",
     title: "Communications Lead",
-    image: "/team/com.jpg",
+    image: "https://pbs.twimg.com/profile_images/1933222335932477441/2UeTXJXZ_400x400.jpg",
     description:
       "Leads external communications, community outreach, and brand voice. Skilled at turning complex product ideas into compelling stories.",
   },

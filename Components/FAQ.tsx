@@ -153,7 +153,7 @@ export default function FAQ({
             return (
               <div
                 key={index}
-                className={`relative group w-full px-6 py-5 transition-all duration-200 ease-in-out bg-[#FAFAF2]  rounded-2xl sm:rounded-3xl`}
+                className={`relative group w-full px-6 py-5 transition-all duration-200 ease-in-out bg-[#FAFAF2]  rounded-2xl sm:rounded-4xl border border-[#E8E6DA]`}
               >
                 {/* Use a native button for better semantics but keep visual layout identical */}
                 <button
@@ -162,7 +162,7 @@ export default function FAQ({
                   aria-controls={panelId}
                   onClick={() => handleToggle(index)}
                   onKeyDown={(e) => handleKeyDown(e, index)}
-                  className="w-full flex items-start sm:items-center justify-between space-x-4 cursor-pointer outline-none text-left"
+                  className="w-full flex items-start sm:items-center justify-between space-x-4 cursor-pointer outline-none text-left "
                 >
                   <div className="flex-1 pr-3 mt-1 sm:mt-0">
                     <h3
