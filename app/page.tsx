@@ -16,7 +16,7 @@ export default function LandingPage() {
       <TrustedBrands />
       <InputChat />
       <Future />
-      <FounderSection />
+      {/* <FounderSection /> */}
       <FAQ />
       <Footer />
     </div>
