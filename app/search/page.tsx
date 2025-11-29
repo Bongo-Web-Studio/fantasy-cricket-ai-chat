@@ -244,7 +244,7 @@ export default function App(): React.ReactElement {
               {/* Messages / suggestions area */}
               <div
                 ref={messagesRef}
-                className="flex-1 overflow-auto  px-5 py-6 space-y-6 no-scrollbar "
+                className="flex-1 overflow-auto  px-5 py-6 space-y-6 no-scrollbar  "
               >
                 {/* If comparisonQuery exists, render ONLY the comparison component */}
                 {comparisonQuery ? (
@@ -259,6 +259,8 @@ export default function App(): React.ReactElement {
                         // @ts-ignore
                         week={comparisonQuery.week}
                       />
+
+                               <div className="h-28 md:h-40 mt-40" />
                     </div>
                   </div>
                 ) : (
@@ -268,7 +270,7 @@ export default function App(): React.ReactElement {
                       {messages.map((m) => (
                         <div
                           key={m.id}
-                          className={`max-w-[85%] p-3 rounded-2xl ${
+                          className={`max-w-[90%] p-3 rounded-2xl ${
                             m.role === "user"
                               ? "self-end bg-white text-black"
                               : "self-start bg-white text-black"
@@ -281,7 +283,7 @@ export default function App(): React.ReactElement {
 
                     {/* Conditional rendering for single-player queries (kept) */}
                     {parsedQuery && parsedQuery.player && parsedQuery.week ? (
-                      <div className="max-w-[85%] p-0 self-start">
+                      <div className="max-w-[90%] p-0 self-start">
                         <SinglePlayerResponseClean />
                       </div>
                     ) : lastUserMessage ? (
@@ -298,7 +300,7 @@ export default function App(): React.ReactElement {
                     {/* <PlayerComparisonResponse/> */}
 
                     {/* extra bottom padding so the last message isn't hidden by the fixed input */}
-                    <div className="h-28 md:h-32" />
+                    <div className="h-28 md:h-40 mt-40" />
                   </>
                 )}
               </div>
