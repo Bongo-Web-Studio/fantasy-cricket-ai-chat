@@ -143,15 +143,7 @@ const SinglePlayerResponseClean: React.FC<Props> = ({ playerData, onSelect }) =>
                   suggest he will contribute high fantasy points, especially if the batting conditions are favorable and he bats in the top order.
                 </p>
 
-                <div className="mt-4">
-                  <button
-                    type="button"
-                    onClick={() => handleSelect(true)}
-                    className="px-3 py-2 rounded-md bg-[#2795A2] text-white"
-                  >
-                    Select Player
-                  </button>
-                </div>
+            
               </section>
             </div>
           </section>
