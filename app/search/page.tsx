@@ -244,7 +244,7 @@ export default function App(): React.ReactElement {
               {/* Messages / suggestions area */}
               <div
                 ref={messagesRef}
-                className="flex-1 overflow-auto  px-4 py-6 space-y-6 no-scrollbar"
+                className="flex-1 overflow-auto  px-5 py-6 space-y-6 no-scrollbar "
               >
                 {/* If comparisonQuery exists, render ONLY the comparison component */}
                 {comparisonQuery ? (
