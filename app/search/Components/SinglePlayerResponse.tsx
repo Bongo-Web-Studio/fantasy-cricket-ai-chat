@@ -126,10 +126,6 @@ const SinglePlayerResponseClean: React.FC<Props> = ({ playerData, onSelect }) =>
                     <h1 className="text-[#2795A2]">73</h1>
                   </div>
 
-                  {/* readable projection text */}
-                  <div className="absolute top-3 left-1/2 transform -translate-x-1/2 text-sm text-gray-700">
-                    {projectionText}
-                  </div>
                 </div>
               </section>
             </div>
